@@ -12,15 +12,14 @@ return {
     },
   },
   keys = {
-    { "<leader>pf",  function() require("telescope.builtin").find_files()  end, desc = "Find files" },
-    { "<leader>pg",  function() require("telescope.builtin").git_files()  end, desc = "Find files (git)" },
+    { "<leader>ff",  function() require("telescope.builtin").find_files()  end, desc = "Find files" },
     { "<leader><leader>",  function() require("telescope.builtin").git_files()  end, desc = "Find files (git)" },
-    { "<leader>ph",  function() require("telescope.builtin").find_files({
+    { "<leader>fF",  function() require("telescope.builtin").find_files({
 	    hidden = true,
 	    no_ignore = true
     })  end, desc = "Find files (include hidden)" },
-    { "<C-f>",  function() require("telescope.builtin").live_grep()   end, desc = "Live grep" },
-    { "<C-b>",  function() require("telescope.builtin").buffers()     end, desc = "List buffers" },
+    { "<leader>fj",  function() require("telescope.builtin").live_grep()   end, desc = "Live grep" },
+    { "<leader>fk",  function() require("telescope.builtin").buffers()     end, desc = "List buffers" },
   },
   config = function()
     require("telescope").setup({
