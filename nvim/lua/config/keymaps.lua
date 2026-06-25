@@ -1,0 +1,22 @@
+------------------------------------------------------------------------------
+-- Window navigation (Alt + hjkl)
+------------------------------------------------------------------------------
+-- vim.keymap.set("n", "<A-h>", "<C-w>h", { desc = "Window: focus left" })
+-- vim.keymap.set("n", "<A-j>", "<C-w>j", { desc = "Window: focus down" })
+-- vim.keymap.set("n", "<A-k>", "<C-w>k", { desc = "Window: focus up" })
+-- vim.keymap.set("n", "<A-l>", "<C-w>l", { desc = "Window: focus right" })
+
+------------------------------------------------------------------------------
+-- Window management (Alt + Shift + hjkl)
+------------------------------------------------------------------------------
+-- vim.keymap.set("n", "<A-H>", "<C-w>H", { desc = "Window: move left" })
+-- vim.keymap.set("n", "<A-J>", "<C-w>J", { desc = "Window: move down" })
+-- vim.keymap.set("n", "<A-K>", "<C-w>K", { desc = "Window: move up" })
+-- vim.keymap.set("n", "<A-L>", "<C-w>L", { desc = "Window: move right" })
+
+------------------------------------------------------------------------------
+-- Window resize / layout
+------------------------------------------------------------------------------
+-- vim.keymap.set("n", "<A-=>", "<C-w>=", { desc = "Window: equalize" })
+-- vim.keymap.set("n", "<A-_>", "<C-w>_", { desc = "Window: maximize height" })
+-- vim.keymap.set("n", "<A-c>", "<C-w>c", { desc = "Window: close" })

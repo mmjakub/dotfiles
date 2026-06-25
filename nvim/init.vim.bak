@@ -1,0 +1,72 @@
+set termguicolors
+colorscheme slate
+
+set nocompatible
+filetype on
+filetype plugin on
+filetype indent on
+syntax on
+
+"
+" search
+"
+set hlsearch
+set incsearch
+set smartcase
+set ignorecase
+nnoremap <nowait><silent> <c-l> :set hls!<cr>
+
+set mouse=nv
+set wildmode=longest,list,full
+set wildmenu
+
+set number
+set relativenumber
+set cursorline
+set laststatus=2
+set ruler
+
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set softtabstop=4
+set shiftround
+set autoindent
+set smartindent
+
+"gui
+set guioptions-=m  "menu bar
+set guioptions-=T  "toolbar
+set guioptions-=r  "scrollbar
+set guioptions-=R  "scrollbar
+set guioptions-=l  "scrollbar
+set guioptions-=L  "scrollbar
+
+map <A-h> <C-w>h
+map <A-j> <C-w>j
+map <A-k> <C-w>k
+map <A-l> <C-w>l
+map <A-p> <C-w>p
+map <A-H> <C-w>H
+map <A-J> <C-w>J
+map <A-K> <C-w>K
+map <A-L> <C-w>L
+map <A-=> <C-w>=
+map <A-_> <C-w>_
+map <A--> <C-w>10-
+map <A-+> <C-w>10+
+map <A-<> <C-w>20<
+map <A->> <C-w>20>
+map <A-c> <C-w>c
+
+"nnoremap <C-q> <Esc>:quit!<CR>
+
+" NERDTree
+"nnoremap <leader>n :NERDTreeFocus<CR>
+"nnoremap <C-n> :NERDTree<CR>
+"nnoremap <C-t> :NERDTreeToggle<CR>
+"nnoremap <C-f> :NERDTreeFind<CR>
+
+"html
+autocmd Filetype htmldjango setlocal ts=2 sw=2
+autocmd Filetype html setlocal ts=2 sw=2
