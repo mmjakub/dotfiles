@@ -4,6 +4,7 @@
 
 ## Currently tracked
 - `nvim/` — Neovim config (see `docs/nvim/` for details)
+- `tmux/` - Tmux config
 
 ## Adding new dotfiles
 - Add a new dir under `~/dotfiles/<name>/`

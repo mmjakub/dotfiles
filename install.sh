@@ -7,6 +7,7 @@ DOTFILES_DIR="$HOME/dotfiles"
 # Add new dotfiles here: dir name -> target path
 declare -A REGISTRY=(
   ["nvim"]="$HOME/.config/nvim"
+  ["tmux"]="$HOME/.config/tmux"
 )
 
 # ── Colors ────────────────────────────────────────────────────
