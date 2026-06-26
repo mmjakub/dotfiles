@@ -8,6 +8,7 @@ DOTFILES_DIR="$HOME/dotfiles"
 declare -A REGISTRY=(
   ["nvim"]="$HOME/.config/nvim"
   ["tmux"]="$HOME/.config/tmux"
+  ["zsh"]="$HOME/.config/zsh"
 )
 
 # ── Colors ────────────────────────────────────────────────────
@@ -89,6 +90,21 @@ for name in "${!REGISTRY[@]}"; do
   success "linked → $target"
   installed=$((installed + 1))
 done
+
+# ── Extra symlinks ──────────────────────────────────────────────
+# .zshenv must live at $HOME (ZDOTDIR not yet set when zsh reads it)
+zshenv_target="$HOME/.zshenv"
+zshenv_source="$DOTFILES_DIR/zsh/.zshenv"
+if [ -L "$zshenv_target" ] && [ "$(readlink "$zshenv_target")" = "$zshenv_source" ]; then
+  success "zshenv already linked"
+else
+  if [ -e "$zshenv_target" ] || [ -L "$zshenv_target" ]; then
+    warn "zshenv exists"
+    backup "$zshenv_target"
+  fi
+  ln -s "$zshenv_source" "$zshenv_target"
+  success "zshenv linked → $zshenv_target"
+fi
 
 # ── Summary ───────────────────────────────────────────────────
 echo

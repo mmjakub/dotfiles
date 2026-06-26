@@ -5,6 +5,7 @@
 ## Currently tracked
 - `nvim/` — Neovim config (see `docs/nvim/` for details)
 - `tmux/` - Tmux config
+- `zsh/` - Zsh config (`.zshenv`, `.zshrc`, `git-prompt.sh`)
 
 ## Adding new dotfiles
 - Add a new dir under `~/dotfiles/<name>/`

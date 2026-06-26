@@ -1,0 +1,4 @@
+# zsh runtime files
+zsh/.zcompdump
+zsh/.zhistory
+zsh/.zsh_history
