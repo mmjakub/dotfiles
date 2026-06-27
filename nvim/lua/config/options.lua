@@ -65,3 +65,61 @@ vim.opt.cursorline = true
 --   end,
 --   desc = "HTML: use 2-space indents",
 -- })
+
+------------------------------------------------------------------------------
+-- Auto-reload files on external changes (fs_event watcher)
+------------------------------------------------------------------------------
+vim.opt.autoread = true
+
+local uv = vim.uv or vim.loop
+local reload_watchers = {}
+
+local function setup_reload_watcher()
+  local buf = vim.api.nvim_get_current_buf()
+  local file = vim.api.nvim_buf_get_name(buf)
+  if file == "" or vim.bo[buf].buftype ~= "" then
+    return
+  end
+  if reload_watchers[file] then
+    return
+  end
+
+  local w = uv.new_fs_event()
+  if not w then
+    return
+  end
+  reload_watchers[file] = w
+
+  w:start(file, {}, function(err)
+    if err then
+      return
+    end
+    vim.schedule(function()
+      if vim.api.nvim_buf_is_valid(buf) then
+        vim.cmd("checktime " .. vim.fn.fnameescape(file))
+      end
+    end)
+  end)
+end
+
+local function clear_reload_watcher()
+  local buf = vim.api.nvim_get_current_buf()
+  local file = vim.api.nvim_buf_get_name(buf)
+  if reload_watchers[file] then
+    reload_watchers[file]:close()
+    reload_watchers[file] = nil
+  end
+end
+
+vim.api.nvim_create_autocmd("BufReadPost", {
+  pattern = "*",
+  callback = setup_reload_watcher,
+  desc = "Set up fs_event watcher for auto-reload",
+})
+
+vim.api.nvim_create_autocmd("BufWipeout", {
+  pattern = "*",
+  callback = clear_reload_watcher,
+  desc = "Clean up fs_event watcher",
+})
+

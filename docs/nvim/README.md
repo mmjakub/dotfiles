@@ -14,9 +14,13 @@ lua/plugins/*.lua               per-plugin lazy.nvim specs
 init.vim.bak                    stale VimL backup — not active
 ```
 
+## Auto-reload
+
+Files are reloaded automatically on external changes via a `vim.uv.fs_event` watcher (`autoread` is also enabled as a fallback).
+
 ## Active options
 
-`termguicolors`, `number`, `relativenumber`, `cursorline`
+`termguicolors`, `number`, `relativenumber`, `cursorline`, `autoread`
 
 ## Plugins
 
