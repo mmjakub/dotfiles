@@ -6,6 +6,7 @@
 - `nvim/` — Neovim config (see `docs/nvim/` for details)
 - `tmux/` - Tmux config
 - `zsh/` - Zsh config (`.zshenv`, `.zshrc`, `git-prompt.sh`)
+- `aliases/` - Shell aliases (split into `aliases.d/` categories)
 - `keyd/` - Keyd config (`default.conf`)
 - `lazygit/` - Lazygit config (`config.yml`)
 

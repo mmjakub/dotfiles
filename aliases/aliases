@@ -1,0 +1,5 @@
+# Source all alias categories
+for file in "$XDG_CONFIG_HOME"/aliases.d/*; do
+  [ -f "$file" ] && . "$file"
+done
+unset file

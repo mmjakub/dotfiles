@@ -8,6 +8,7 @@ declare -A TARGET=(
   ["nvim"]="$HOME/.config/nvim"
   ["tmux"]="$HOME/.config/tmux"
   ["zsh"]="$HOME/.config/zsh"
+  ["aliases"]="$HOME/.config"
   ["keyd"]="/etc/keyd"
   ["lazygit"]="$HOME/.config/lazygit"
 )
@@ -16,6 +17,7 @@ declare -A TYPE=(
   ["nvim"]="symlink"
   ["tmux"]="symlink"
   ["zsh"]="files"
+  ["aliases"]="files"
   ["keyd"]="copy"
   ["lazygit"]="files"
 )
