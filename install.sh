@@ -9,6 +9,7 @@ declare -A TARGET=(
   ["tmux"]="$HOME/.config/tmux"
   ["zsh"]="$HOME/.config/zsh"
   ["keyd"]="/etc/keyd"
+  ["lazygit"]="$HOME/.config/lazygit"
 )
 
 declare -A TYPE=(
@@ -16,6 +17,7 @@ declare -A TYPE=(
   ["tmux"]="symlink"
   ["zsh"]="files"
   ["keyd"]="copy"
+  ["lazygit"]="files"
 )
 
 declare -A PLATFORM=(

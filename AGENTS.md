@@ -7,6 +7,7 @@
 - `tmux/` - Tmux config
 - `zsh/` - Zsh config (`.zshenv`, `.zshrc`, `git-prompt.sh`)
 - `keyd/` - Keyd config (`default.conf`)
+- `lazygit/` - Lazygit config (`config.yml`)
 
 ## Adding new dotfiles
 - Add a new dir under `~/dotfiles/<name>/`
