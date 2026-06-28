@@ -54,7 +54,7 @@ return {
           map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
           map("n", "[d", vim.diagnostic.goto_prev, opts)
           map("n", "]d", vim.diagnostic.goto_next, opts)
-          map("n", "<leader>e", vim.diagnostic.open_float, opts)
+          map("n", "<leader>de", vim.diagnostic.open_float, vim.tbl_extend("force", opts, { desc = "Show diagnostic float" }))
 
           if client.name == "basedpyright" then
             client.server_capabilities.documentFormattingProvider = false

@@ -36,7 +36,14 @@
 | `<leader>ca` | Normal | Code action |
 | `[d` | Normal | Previous diagnostic |
 | `]d` | Normal | Next diagnostic |
-| `<leader>e` | Normal | Show diagnostic float |
+| `<leader>de` | Normal | Show diagnostic float |
+
+### File explorer — `nvim/lua/plugins/neo-tree.lua`, `nvim/lua/plugins/oil.lua`
+
+| Key | Mode | Action |
+|-----|------|--------|
+| `<leader>e` | Normal | Toggle neo-tree file explorer (sidebar) |
+| `<leader>o` | Normal | oil: open current directory as editable buffer |
 
 ### Telescope — `nvim/lua/plugins/telescope.lua:15-22`
 
