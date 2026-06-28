@@ -12,21 +12,11 @@ return {
     end,
   },
   {
-    "EdenEast/nightfox.nvim",
+    "ellisonleao/gruvbox.nvim",
     lazy = true,
-    cmd = { "Nightfox", "Dayfox", "Dawnfox", "Duskfox", "Nordfox", "Terafox", "Carbonfox" },
+    cmd = { "Gruvbox" },
     config = function()
-      require("nightfox").setup({})
-    end,
-  },
-  {
-    "folke/tokyonight.nvim",
-    lazy = true,
-    cmd = { "Tokyonight" },
-    config = function()
-      require("tokyonight").setup({
-        style = "storm",
-      })
+      require("gruvbox").setup({})
     end,
   },
 }
