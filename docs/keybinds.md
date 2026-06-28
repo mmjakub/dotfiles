@@ -61,6 +61,21 @@ All in insert mode.
 | `<CR>` | Confirm selected completion item |
 | `<F2>` | Toggle auto-complete on/off |
 
+### Gitsigns — `nvim/lua/plugins/gitsigns.lua`
+
+| Key | Mode | Action |
+|-----|------|--------|
+| `]h` | Normal | Next hunk |
+| `[h` | Normal | Prev hunk |
+| `<leader>hs` | Normal | Stage hunk |
+| `<leader>hr` | Normal | Reset hunk |
+| `<leader>hS` | Normal | Stage buffer |
+| `<leader>hu` | Normal | Undo stage hunk |
+| `<leader>hp` | Normal | Preview hunk (floating window) |
+| `<leader>hb` | Normal | Blame line |
+| `<leader>hd` | Normal | Diff this |
+| `<leader>htd` | Normal | Toggle deleted lines inline |
+
 ---
 
 ## Tmux (`tmux/tmux.conf`)
