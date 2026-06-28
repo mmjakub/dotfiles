@@ -59,6 +59,7 @@ All in insert mode.
 | `<C-l>` | Manually trigger completion |
 | `<C-e>` | Abort / close completion menu |
 | `<CR>` | Confirm selected completion item |
+| `<F2>` | Toggle auto-complete on/off |
 
 ---
 
