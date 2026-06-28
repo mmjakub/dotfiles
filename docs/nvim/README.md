@@ -5,41 +5,31 @@
 ## Structure
 
 ```
-init.lua                        entrypoint (leader=space)
+init.lua                        entrypoint (leader=space, localleader=\)
 lua/config/lazy.lua             lazy.nvim bootstrap + plugin import
-lua/config/options.lua          vim options
-lua/config/colorscheme.lua      theme cycling
-lua/config/keymaps.lua          window keymaps (all commented out)
+lua/config/options.lua          vim options + auto-reload watcher
+lua/config/colorscheme.lua      theme cycling keymaps
 lua/plugins/*.lua               per-plugin lazy.nvim specs
-init.vim.bak                    stale VimL backup — not active
 ```
 
-## Auto-reload
+## Conventions
 
-Files are reloaded automatically on external changes via a `vim.uv.fs_event` watcher (`autoread` is also enabled as a fallback).
+- Plugin specs live one-per-file in `lua/plugins/`, auto-discovered via `import = "plugins"`. **To add a plugin: create a file there, done — no registration anywhere.**
+- Each file returns either a single spec table or a list of tables (for related plugins, e.g. mason + lspconfig):
 
-## Active options
+  ```lua
+  {
+    "author/repo",
+    event = "VeryLazy",
+    keys = { { "<leader>ff", desc = "..." } },
+    opts = { ... },
+    config = function()
+      require("plugin").setup({ ... })
+    end,
+  }
+  ```
 
-`termguicolors`, `number`, `relativenumber`, `cursorline`, `autoread`
-
-## Plugins
-
-- telescope.nvim (branch `0.1.x`) + telescope-fzf-native
-- nvim-treesitter (bash, python, lua, vim, vimdoc, query, markdown)
-- which-key.nvim
-- Colorschemes: kanagawa (default wave), nightfox/nordfox, tokyonight
-
-## Keymaps (leader = space)
-
-| Binding | Action |
-|---|---|
-| `<leader>pf` | Telescope find_files |
-| `<leader>pg` / `<leader><leader>` | Telescope git_files |
-| `<leader>ph` | Telescope find_files (hidden) |
-| `<C-f>` | Telescope live_grep |
-| `<C-b>` | Telescope buffers |
-| `<leader>cc` | Cycle theme |
-| `<leader>ck` | Kanagawa |
-| `<leader>cn` | Nordfox |
-| `<leader>ct` | Tokyonight |
-| `<leader>ch` | Habamax |
+- Lazy-load with `event`, `cmd`, or `keys`. See existing files in `lua/plugins/` for patterns.
+- Keybindings live inside the relevant plugin spec (`keys`, `on_attach`, or `config`), not in a central keymaps file. After adding or changing one, update `docs/keybinds.md`.
+- Include `desc` on every keymap for which-key integration.
+- Shared non-plugin logic (options, theme cycling) goes in `lua/config/`.
