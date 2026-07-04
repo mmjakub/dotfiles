@@ -45,7 +45,7 @@ if [ "${1:-}" = "--clean" ]; then
 
   for name in "${!TARGET[@]}"; do
     platform="${PLATFORM[$name]:-}"
-    [ -n "$platform" ] && [ "$(uname -s)" != "$platform" ] && continue
+    [ -n "$platform" ] && [ "$(uname -s | tr '[:upper:]' '[:lower:]')" != "$platform" ] && continue
 
     target="${TARGET[$name]}"
     type="${TYPE[$name]}"
@@ -155,7 +155,7 @@ for name in "${!TARGET[@]}"; do
 
   printf "  [${BOLD}%s${RESET}] " "$name"
 
-  if [ -n "$platform" ] && [ "$(uname -s)" != "$platform" ]; then
+  if [ -n "$platform" ] && [ "$(uname -s | tr '[:upper:]' '[:lower:]')" != "$platform" ]; then
     info "skipped (requires $platform)"
     skipped=$((skipped + 1))
     continue
