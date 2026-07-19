@@ -14,3 +14,4 @@ alias lg=lazygit
 
 alias hs='hunk show HEAD~1'
 alias hd='hunk diff'
+alias hdw='hunk diff --watch'
