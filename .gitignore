@@ -2,3 +2,4 @@
 zsh/.zcompdump
 zsh/.zhistory
 zsh/.zsh_history
+/nvim/lazy-lock.json
